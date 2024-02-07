@@ -7,19 +7,28 @@ import {
 } from './WeatherRecent.styled';
 
 const WeatherRecent = () => {
-  const { weatherCurrentInfo } = useWeatherGet();
+  const { weatherCurrentInfo, weatherCurrentCityInfo, weatherCurrentMainInfo } = useWeatherGet();
+
+  const today = new Date();
+
+  const formattedMonth = today.getMonth() < 10 ? `0${today.getMonth() + 1}` : today.getMonth() + 1;
+  const formattedDay = today.getDate() < 10 ? `0${today.getDate()}` : today.getDate();
+  const todayDate = `${formattedMonth}월 ${formattedDay}일`;
+  const formattedHours = today.getHours() < 10 ? `0${today.getHours()}` : today.getHours();
+  const recentTime = `${formattedHours}:00`;
+
   return (
     <StyledWeatherRecent>
       <StyledWeatherRecentBox id="column">
         <StyledWeatherRecentBox id="flex">
-          <StyledWeatherRecentBold id="recentcity">창원</StyledWeatherRecentBold>
-          <StyledWeatherRecentBold id="recent">경상남도 창원시 성산구, 12:00 기준</StyledWeatherRecentBold>
+          <StyledWeatherRecentBold id="recentcity">{weatherCurrentCityInfo}</StyledWeatherRecentBold>
+          <StyledWeatherRecentBold id="recent">경상남도 창원시 성산구, {recentTime} 기준</StyledWeatherRecentBold>
         </StyledWeatherRecentBox>
         <StyledWeatherRecentBox id="flex">
-          <StyledWeatherRecentImg src="weather/recenticon/sunny.png" alt="sunny" />
+          <StyledWeatherRecentImg src={'weather/recenticon/' + weatherCurrentMainInfo + '.png'} alt="mainweather" />
           <StyledWeatherRecentBox id="column">
-            <StyledWeatherRecentBold id="date">01월22일</StyledWeatherRecentBold>
-            <StyledWeatherRecentBold id="temperature">+22ºC</StyledWeatherRecentBold>
+            <StyledWeatherRecentBold id="date">{todayDate}</StyledWeatherRecentBold>
+            <StyledWeatherRecentBold id="temperature">{weatherCurrentInfo}ºC</StyledWeatherRecentBold>
           </StyledWeatherRecentBox>
         </StyledWeatherRecentBox>
       </StyledWeatherRecentBox>

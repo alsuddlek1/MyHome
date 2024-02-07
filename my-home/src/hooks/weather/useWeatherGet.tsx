@@ -8,16 +8,21 @@ export const useWeatherGet = () => {
   const { latitude, longitude, error } = useLocationGetHook();
 
   const [weatherCurrentInfo, setWeatherCurrentInfo] = useState<any>();
+  const [weatherCurrentCityInfo, setWeatherCurrentCityInfo] = useState<string>();
+  const [weatherCurrentMainInfo, setWeatherCurrentMainInfo] = useState<string>();
 
   useEffect(() => {
     const getWeatherCurrentInfo = async () => {
       if (latitude) {
         const response = await WeatherCurrentInfo(latitude, longitude, AccessToken);
-        console.log(response);
+        // console.log(response);
+        setWeatherCurrentInfo(Math.floor(response.data.main.temp));
+        setWeatherCurrentCityInfo(response.data.name);
+        setWeatherCurrentMainInfo(response.data.weather[0].main);
       }
     };
     getWeatherCurrentInfo();
   }, [latitude]);
 
-  return { weatherCurrentInfo };
+  return { weatherCurrentInfo, weatherCurrentCityInfo, weatherCurrentMainInfo };
 };
