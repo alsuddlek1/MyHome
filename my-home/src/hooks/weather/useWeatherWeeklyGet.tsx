@@ -13,7 +13,6 @@ export const useWeatherGetWeekly = () => {
     const getWeatherWeekly = async () => {
       if (latitude) {
         const response = await WeatherGetWeekly(latitude, longitude, AccessToken);
-        console.log(response.data);
         setWeatherWeeklyList(response.data);
       }
     };
