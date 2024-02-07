@@ -15,8 +15,7 @@ const WeatherRecent = () => {
   const formattedDay = today.getDate() < 10 ? `0${today.getDate()}` : today.getDate();
   const todayDate = `${formattedMonth}월 ${formattedDay}일`;
   const formattedHours = today.getHours() < 10 ? `0${today.getHours()}` : today.getHours();
-  const formattedMinutes = today.getMinutes() < 10 ? `0${today.getMinutes()}` : today.getMinutes();
-  const recentTime = `${formattedHours}:${formattedMinutes}`;
+  const recentTime = `${formattedHours}:00`;
 
   return (
     <StyledWeatherRecent>

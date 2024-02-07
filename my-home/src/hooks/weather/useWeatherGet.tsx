@@ -15,7 +15,7 @@ export const useWeatherGet = () => {
     const getWeatherCurrentInfo = async () => {
       if (latitude) {
         const response = await WeatherCurrentInfo(latitude, longitude, AccessToken);
-        console.log(response);
+        // console.log(response);
         setWeatherCurrentInfo(Math.floor(response.data.main.temp));
         setWeatherCurrentCityInfo(response.data.name);
         setWeatherCurrentMainInfo(response.data.weather[0].main);
