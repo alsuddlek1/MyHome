@@ -1,3 +1,4 @@
+import { useWeatherGet } from '../../hooks/weather/useWeatherGet';
 import {
   StyledWeather,
   StyledWeatherBack,
@@ -9,7 +10,9 @@ import WeatherToday from './weathertoday';
 import WeatherWeekly from './weatherweekly';
 
 const Weather = () => {
-  const recentweather = 'sunny';
+  const { weatherCurrentMainInfo } = useWeatherGet();
+  console.log(weatherCurrentMainInfo);
+  const recentweather = weatherCurrentMainInfo;
   return (
     <StyledWeather recentweather={recentweather}>
       <StyledWeatherBack>

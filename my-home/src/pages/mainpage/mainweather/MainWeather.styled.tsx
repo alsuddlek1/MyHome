@@ -1,43 +1,96 @@
 import styled, { css } from 'styled-components';
 
-const StyledMainWeather = styled.div.attrs<any>(() => ({}))`
-  ${(props) => {
-    const recentweather = props.recentweather;
-    const wether: any = {
-      sunny: `
-    background-image: url('weather/weather-sunny.jpg');
-    `,
-      cloudy: `
-    background-image: url('weather/weather-cloudy.jpg');
-    `,
-      night: `
-    background-image: url('weather/weather-night.jpg');
-    `,
-      rainy: `
-    background-image: url('weather/weather-rainy.jpg');
-    `,
-      snow: `
-    background-image: url('weather/weather-snow.jpg');
-    `,
-      thunder: `
-    background-image: url('weather/weather-thunder.jpg');
-    `,
-      windy: `
-    background-image: url('weather/weather-windy.jpg');
-    `,
-    };
-    return css`
-      width: 100%;
-      max-width: 1000px;
-      height: 200px;
-      margin-top: 40px;
-      border-radius: 30px;
-      background-image: url('weather/weather-sunny.jpg');
-      background-size: contain;
-      display: grid;
-      ${wether[recentweather]};
-    `;
-  }}
+// const StyledMainWeather = styled.div.attrs<any>(() => ({}))`
+//   ${(props) => {
+//     const recentweather = props.recentweather;
+//     const wether: any = {
+//       sunny: `
+//     background-image: url('weather/weather-sunny.jpg');
+//     `,
+//       cloudy: `
+//     background-image: url('weather/weather-cloudy.jpg');
+//     `,
+//       night: `
+//     background-image: url('weather/weather-night.jpg');
+//     `,
+//       rainy: `
+//     background-image: url('weather/weather-rainy.jpg');
+//     `,
+//       snow: `
+//     background-image: url('weather/weather-snow.jpg');
+//     `,
+//       thunder: `
+//     background-image: url('weather/weather-thunder.jpg');
+//     `,
+//       windy: `
+//     background-image: url('weather/weather-windy.jpg');
+//     `,
+//     };
+//     return css`
+//       width: 100%;
+//       max-width: 1000px;
+//       height: 200px;
+//       margin-top: 40px;
+//       border-radius: 30px;
+//       background-image: url('weather/weather-sunny.jpg');
+//       background-size: contain;
+//       display: grid;
+//       ${wether[recentweather]};
+//     `;
+//   }}
+// `;
+// const StyledMainWeather = styled.div.attrs<any>(() => ({}))`
+//   ${(props) => {
+//     const recentweather = props.recentweather;
+//     const wether: any = {
+//       sunny: `
+//     background-image: url('weather/weather-sunny.jpg');
+//     `,
+//       cloudy: `
+//     background-image: url('weather/weather-cloudy.jpg');
+//     `,
+//       night: `
+//     background-image: url('weather/weather-night.jpg');
+//     `,
+//       rainy: `
+//     background-image: url('weather/weather-rainy.jpg');
+//     `,
+//       snow: `
+//     background-image: url('weather/weather-snow.jpg');
+//     `,
+//       thunder: `
+//     background-image: url('weather/weather-thunder.jpg');
+//     `,
+//       windy: `
+//     background-image: url('weather/weather-windy.jpg');
+//     `,
+//     };
+//     return css`
+//       width: 100%;
+//       max-width: 1000px;
+//       height: 200px;
+//       margin-top: 40px;
+//       border-radius: 30px;
+//       background-image: url('weather/weather-sunny.jpg');
+//       background-size: contain;
+//       display: grid;
+//       ${wether[recentweather]};
+//     `;
+//   }}
+// `;
+
+const StyledMainWeather = styled.div.attrs<{ recentweather: any }>((props) => ({
+  style: {
+    backgroundImage: `url('weather/weather-${props.recentweather}.jpg')`,
+  },
+}))<{ recentweather: any }>`
+  width: 100%;
+  max-width: 1000px;
+  height: 200px;
+  margin-top: 40px;
+  border-radius: 30px;
+  background-size: contain;
+  display: grid;
 `;
 
 const StyledMainWeatherText = styled.div.attrs<any>(() => ({}))`

@@ -12,6 +12,7 @@ import {
 
 const WeatherWeekly = () => {
   const { weatherWeeklyList } = useWeatherGetWeekly();
+
   return (
     <StyledWeatherWeekly>
       <StyledWeatherWeeklyTodayMarkTriangle />
@@ -20,8 +21,8 @@ const WeatherWeekly = () => {
 
       {weatherWeeklyList?.map((card: any) => (
         <StyledWeatherWeeklyCard key={card.id}>
-          <StyledWeatherWeeklyBold id="cardTitle">수요일</StyledWeatherWeeklyBold>
-          <StyledWeatherWeeklyRegular id="cardDate">0122</StyledWeatherWeeklyRegular>
+          <StyledWeatherWeeklyBold id="cardTitle">{`${card.day}요일`}</StyledWeatherWeeklyBold>
+          <StyledWeatherWeeklyRegular id="cardDate">{card.time}</StyledWeatherWeeklyRegular>
           <br />
           <StyledWeatherWeeklyCardFlex>
             <StyledWeatherWeeklyRegular id="cardDate">min.</StyledWeatherWeeklyRegular>
