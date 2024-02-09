@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const StyledWeather = styled.div.attrs<{ recentweather: string }>((props) => ({
+const StyledWeather = styled.div.attrs<{ recentweather: any }>((props) => ({
   style: {
     backgroundImage: `url('weather/weather-${props.recentweather}.jpg')`,
   },
-}))<{ recentweather: string }>`
+}))<{ recentweather: any }>`
   background-size: cover;
   min-height: 100vh;
   flex: 9;

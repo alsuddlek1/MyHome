@@ -4,7 +4,7 @@ import { StyledMainWeather, StyledMainWeatherText } from './MainWeather.styled';
 const MainWeather = () => {
   // api 연동하고 수정
   const { weatherCurrentInfo, weatherCurrentCityInfo, weatherCurrentMainInfo } = useWeatherGet();
-  const recentweather = { weatherCurrentMainInfo };
+  const recentweather = weatherCurrentMainInfo;
 
   const today = new Date();
   const formattedHours = today.getHours() < 10 ? `0${today.getHours()}` : today.getHours();

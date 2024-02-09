@@ -25,7 +25,10 @@ const WeatherRecent = () => {
           <StyledWeatherRecentBold id="recent">경상남도 창원시 성산구, {recentTime} 기준</StyledWeatherRecentBold>
         </StyledWeatherRecentBox>
         <StyledWeatherRecentBox id="flex">
-          <StyledWeatherRecentImg src={'weather/recenticon/' + weatherCurrentMainInfo + '.png'} alt="mainweather" />
+          <StyledWeatherRecentImg
+            src={'weather/recenticon/' + weatherCurrentMainInfo + '.png'}
+            alt={weatherCurrentMainInfo}
+          />
           <StyledWeatherRecentBox id="column">
             <StyledWeatherRecentBold id="date">{todayDate}</StyledWeatherRecentBold>
             <StyledWeatherRecentBold id="temperature">{weatherCurrentInfo}ºC</StyledWeatherRecentBold>
