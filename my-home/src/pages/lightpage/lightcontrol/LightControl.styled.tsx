@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const StyledLightControl = styled.div`
   /* border: 1px solid red; */
-  margin: 0px 50px;
+  margin: 0px 0px 0px 50px;
 `;
 
 const StyledLightControlCategoryContainBox = styled.div`
@@ -46,6 +46,7 @@ const StyledLightControlContain = styled.div`
   /* border: 1px solid green; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  margin-right: 50px;
   gap: 50px;
   height: 500px;
   overflow: scroll;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledLight = styled.div`
   background-color: ${(props) => props.theme.colors.background};
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
   min-height: 100vh;
   flex: 9;
   /* display: flex; */
