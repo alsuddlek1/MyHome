@@ -2,7 +2,6 @@ import { useWeatherGet } from '../../../hooks/weather/useWeatherGet';
 import { StyledMainWeather, StyledMainWeatherText } from './MainWeather.styled';
 
 const MainWeather = () => {
-  // api 연동하고 수정
   const { weatherCurrentInfo, weatherCurrentCityInfo, weatherCurrentMainInfo } = useWeatherGet();
   const recentweather = weatherCurrentMainInfo;
 

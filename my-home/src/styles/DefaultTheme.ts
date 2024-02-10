@@ -9,7 +9,9 @@ const theme: DefaultTheme = {
     white: '#FFFFFF',
     black: '#222529',
     lightgray: '#E4E7EC',
+    darkgray: '#585858',
     gray: '#585858',
+    button: '#EEF8FB',
   },
   fonts: {
     lightfont: 'lightfont',

@@ -1,8 +1,14 @@
-import { StyledLight } from './LightPage.styled';
+import { StyledLight, StyledLightTitle } from './LightPage.styled';
+import LightControl from './lightcontrol';
 
 const Light = () => {
   console.log('light');
-  return <StyledLight>전등 컨트롤 페이지</StyledLight>;
+  return (
+    <StyledLight>
+      <StyledLightTitle>전등 컨트롤</StyledLightTitle>
+      <LightControl />
+    </StyledLight>
+  );
 };
 
 export default Light;
